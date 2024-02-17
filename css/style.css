@@ -73,9 +73,9 @@ display: none;
     align-items: center;
 }
 .home-img img{
-    filter: drop-shadow(3px 3px 10px var(--main-color));
+    filter: drop-shadow(2px 2px 5px var(--main-color));
     width: 35vw;
-    animation: floatImage 2s ease-in-out infinite;
+    animation: floatImage 5s ease-in-out infinite;
 }
 @keyframes floatImage {
     0%{
