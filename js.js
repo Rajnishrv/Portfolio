@@ -4,7 +4,7 @@ function sentEmail() {
         SecureToken: "e426ef0b-94f8-44f7-8010-8010184eef51",
         To: 'rajnishkumar550443@gmail.com',
         From: "rajnishkumar550443@gmail.com",
-        Subject: "This is the subject",
+        Subject: document.getElementById("subject").value,
         Body: "Name: " + document.getElementById("name").value
              +"<br> Email: " + document.getElementById("email").value
              +"<br> Phone: " + document.getElementById("phone").value
