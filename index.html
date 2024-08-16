@@ -201,7 +201,7 @@
     <!-- contact section -->
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me!</span></h2>
-        <form action="#">
+        <form onsubmit="sentEmail(); reset(); return false"><!--return valid();-->
             <p style="font-size: 1.5rem;">I'm currently seeking new opportunities and would love to hear about your
                 project or any potential roles
                 that fit my skill set. Feel free to reach out to me!</p>
@@ -214,7 +214,8 @@
                 <input type="text" placeholder="Email Subject">
             </div>
             <textarea id="message" name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-            <input onclick="sentEmail()" type="submit" value="Send Message" class="btn">
+            <button type="submit" class="button btn">Send Message</button>
+            <!-- <input onclick="sentEmail()" type="submit" value="Send Message" class="btn"> -->
         </form>
     </section>
 
@@ -248,7 +249,6 @@
             document.getElementById(tabname).classList.add("active-tab")
         }
     </script>
-    eli
     <script src="https://smtpjs.com/v3/smtp.js"></script>
 </body>
 
