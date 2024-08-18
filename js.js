@@ -14,6 +14,55 @@ function sentEmail() {
     );
 };
 
+// contact form validation
+function valid(){
+    var nameRE = /^[A-Za-z]+(\s)+[A-Za-z]+$/;
+    var emailRE = /^(\w+[\-\.])*\w+@(\w+\.)+[A-Za-z]+$/;
+    var mobRE = /^(\d){10,11}$/;
+    var messageRE = /^(\w)+$/;
+    
+    var Name=document.getElementById("name").value;
+    if(Name==""){
+        
+        alert("Name cannot be blank");
+        return false;
+    }
+    if(!nameRE.test(Name)){
+        alert("Name has to be a combination of fname and lname");
+        return false;
+    }
+    
+    var Email=document.getElementById("email").value;
+    if(Email==""){
+        alert("Email cannot be blank");
+        return false;
+    }
+    if(!emailRE.test(Email)){
+        alert("Email should have proper validation");
+        return false;
+    }
+    
+    var Phone =document.getElementById("phone").value;
+    if(Phone==""){
+        alert("Phone no. cannot be blank");
+        return false;
+    }
+    if(!mobRE.test(Phone)){
+        alert("Please enter 10 digit phone no");
+        return false;
+    }
+    
+    var Message=document.getElementById("message").value;
+    if(Message==""){
+        alert("Message cannot be blank");
+        return false;
+    }
+    if(!messageRE.test(Message)){
+        alert("Dont enter sp. char in  message");
+        return false;
+    }
+    }
+
 // toggle icon navbar
 let menuIcon = document.querySelector('#menu-icon')
 let navbar = document.querySelector('.navbar')

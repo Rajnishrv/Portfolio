@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Rajneesh</title>
-    <meta name="description" content="This is my perasonal website">
+    <meta name="description" content="This is my Portfolio website">
+    <link rel="icon" href="images/homeImg.png">
     <link rel="stylesheet" href="css/style.css">
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -15,9 +16,7 @@
     <!-- header desigh -->
     <header class="header">
         <a href="" class="logo"><span>P</span>ortfolio</a>
-
         <i class='bx bx-menu' id="menu-icon"></i>
-
         <nav class="navbar">
             <a href="#home" class="active">Home</a>
             <a href="#about">About</a>
@@ -206,16 +205,15 @@
                 project or any potential roles
                 that fit my skill set. Feel free to reach out to me!</p>
             <div class="input-box">
-                <input type="text" id="name" placeholder="Full Name">
-                <input type="email" id="email" placeholder="Email Address">
+                <input type="text" id="name" required placeholder="Full Name">
+                <input type="email" id="email" required placeholder="Email Address">
             </div>
             <div class="input-box">
-                <input type="tel" id="phone" placeholder="Mobile Number">
-                <input id="subject" type="text" placeholder="Email Subject">
+                <input type="tel" id="phone" required placeholder="Mobile Number">
+                <input id="subject" type="text" required placeholder="Email Subject">
             </div>
-            <textarea id="message" name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-            <button type="submit" class="button btn">Send Message</button>
-            <!-- <input onclick="sentEmail()" type="submit" value="Send Message" class="btn"> -->
+            <textarea id="message"cols="30" rows="10" placeholder="Your Message"></textarea>
+            <button type="submit" class="button btn" onclick="valid()">Send Message</button>
         </form>
     </section>
 
