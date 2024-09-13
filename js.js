@@ -19,8 +19,7 @@ function valid(){
     var nameRE = /^[A-Za-z]+(\s)+[A-Za-z]+$/;
     var emailRE = /^(\w+[\-\.])*\w+@(\w+\.)+[A-Za-z]+$/;
     var mobRE = /^(\d){10,11}$/;
-    var messageRE = /^(\w)+$/;
-    
+        
     var Name=document.getElementById("name").value;
     if(Name==""){
         
@@ -28,7 +27,7 @@ function valid(){
         return false;
     }
     if(!nameRE.test(Name)){
-        alert("Name has to be a combination of fname and lname");
+        alert("Name has to be a combination of first name and last name");
         return false;
     }
     
@@ -55,10 +54,6 @@ function valid(){
     var Message=document.getElementById("message").value;
     if(Message==""){
         alert("Message cannot be blank");
-        return false;
-    }
-    if(!messageRE.test(Message)){
-        alert("Dont enter sp. char in  message");
         return false;
     }
     }
