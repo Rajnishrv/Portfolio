@@ -577,6 +577,15 @@ font-size: 2.6rem;
         margin-top: 10;
         width: 100vw;
     }
+    .container{
+        flex-direction: column-reverse;
+    }
+    .about-img img {
+        width: 60vw;
+        margin-top: -8rem;
+        transform: scaleX(-1);
+        float: right;
+    }
 }
 @media(max-width:365px) {
     .home-img img {
