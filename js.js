@@ -15,48 +15,48 @@ function sentEmail() {
 };
 
 // contact form validation
-function valid(){
+function valid() {
     var nameRE = /^[A-Za-z]+(\s)+[A-Za-z]+$/;
     var emailRE = /^(\w+[\-\.])*\w+@(\w+\.)+[A-Za-z]+$/;
     var mobRE = /^(\d){10,11}$/;
-        
-    var Name=document.getElementById("name").value;
-    if(Name==""){
-        
+
+    var Name = document.getElementById("name").value;
+    if (Name == "") {
+
         alert("Name cannot be blank");
         return false;
     }
-    if(!nameRE.test(Name)){
+    if (!nameRE.test(Name)) {
         alert("Name has to be a combination of first name and last name");
         return false;
     }
-    
-    var Email=document.getElementById("email").value;
-    if(Email==""){
+
+    var Email = document.getElementById("email").value;
+    if (Email == "") {
         alert("Email cannot be blank");
         return false;
     }
-    if(!emailRE.test(Email)){
+    if (!emailRE.test(Email)) {
         alert("Email should have proper validation");
         return false;
     }
-    
-    var Phone =document.getElementById("phone").value;
-    if(Phone==""){
+
+    var Phone = document.getElementById("phone").value;
+    if (Phone == "") {
         alert("Phone no. cannot be blank");
         return false;
     }
-    if(!mobRE.test(Phone)){
+    if (!mobRE.test(Phone)) {
         alert("Please enter 10 digit phone no");
         return false;
     }
-    
-    var Message=document.getElementById("message").value;
-    if(Message==""){
+
+    var Message = document.getElementById("message").value;
+    if (Message == "") {
         alert("Message cannot be blank");
         return false;
     }
-    }
+}
 
 // toggle icon navbar
 let menuIcon = document.querySelector('#menu-icon')
