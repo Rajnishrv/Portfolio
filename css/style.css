@@ -258,7 +258,7 @@ span {
 
 .tab-contents ul li span {
     color: var(--main-color);
-    font-size: 14px;
+    font-size: 1.8rem;
 }
 
 .tab-contents {
