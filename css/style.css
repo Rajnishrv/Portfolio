@@ -186,7 +186,7 @@ span {
 
 .about-img .img {
     width: 25vw;
-    filter: drop-shadow(2px 2px 8px var(--main-color));
+    filter: drop-shadow(5px 5px 10px black);
 }
 
 .heading {
@@ -284,6 +284,7 @@ span {
     animation-duration: 6.8s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+    box-shadow: 2px 2px 15px var(--main-color);
 }
 @keyframes blob2{
     0%, 100%{
