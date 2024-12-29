@@ -13,7 +13,7 @@
     --bg-color: #1f242d;
     --second-bg-color: #323946;
     --text-color: #fff;
-    --main-color: #0ef;
+    --main-color: #00eeff;
 }
 
 html {
@@ -184,9 +184,9 @@ span {
     flex-basis: 30%;
 }
 
-.about-img img {
+.about-img .img {
     width: 25vw;
-    filter: drop-shadow(2px 2px 5px var(--main-color));
+    filter: drop-shadow(2px 2px 8px var(--main-color));
 }
 
 .heading {
@@ -269,6 +269,34 @@ span {
     display: block;
 }
 
+/* about photo background shape */
+.blob{
+    margin-right: 25px;
+    width: 400px;
+    height: 370px;
+    overflow: hidden;
+    border-radius:42% 56% 72% 28% / 42% 42% 56% 48%;
+    background:url("../images/about-removebg-preview2.png");
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 0 15px rgba(0,0,0,.2);
+    animation-name: blob2;
+    animation-duration: 6.8s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+@keyframes blob2{
+    0%, 100%{
+        border-radius:42% 56% 72% 28% / 42% 42% 56% 48%;
+    }
+    33%{
+       border-radius: 42% 28% 48% 48% / 28% 28% 72% 72%;
+    }
+    66%{
+        border-radius: 100% 56% 56% 100% / 100% 100% 56% 56%;
+    }
+    
+}
 /* .services{
     margin-bottom: 5rem;
 }
@@ -546,7 +574,7 @@ font-size: 2.6rem;
         justify-content: center;
     } */
 
-    .about img {
+    .about .img {
         width: 30vw;
         margin-top: 4rem;
     }
@@ -567,6 +595,9 @@ font-size: 2.6rem;
     .portfolio-container {
         grid-template-columns: 1fr;
     }
+    .blob{
+        margin-right: 20px;
+    }
 }
 
 @media(max-width:450px) {
@@ -580,20 +611,24 @@ font-size: 2.6rem;
     .container{
         flex-direction: column-reverse;
     }
-    .about-img img {
+    .about-img .img {
         width: 60vw;
-        margin-top: -8rem;
+        margin-top: -25rem;
         transform: scaleX(-1);
         float: right;
     }
+    .blob{
+        margin-right: 5px;
+        height: 250px;
+    }
 }
 @media(max-width:365px) {
-    .home-img img {
+    .home-img .img {
         width: 90vw;
     }
 
-    .about-img img {
-        width: 50vw;
+    .about-img .img {
+        width: 56vw;
     }
 
     .footer {
