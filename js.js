@@ -58,64 +58,66 @@ function valid() {
     }
 }
 
-// toggle icon navbar
-let menuIcon = document.querySelector('#menu-icon')
-let navbar = document.querySelector('.navbar')
+// Toggle icon navbar
+const menuIcon = document.querySelector('#menu-icon');
+const navbar = document.querySelector('.navbar');
 
-menuIcon.onclick = () => {
-    menuIcon.classList.toggle('bx-x')
-    navbar.classList.toggle('active')
-};
+menuIcon.addEventListener('click', () => {
+    menuIcon.classList.toggle('bx-x');
+    navbar.classList.toggle('active');
+});
 
-// scrool section active link
-let section = document.querySelectorAll('section');
-let navLinks = document.querySelectorAll('header nav a');
+// Scroll section active link
+window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('header nav a');
+    const header = document.querySelector('header');
 
-window.onscroll = () => {
-    section.forEach(sec => {
-        let top = window.scrollY;
-        let offset = sec.offsetTop - 150;
-        let height = sec.offsetHeight;
-        let id = sec.getAttribute('id');
+    sections.forEach(sec => {
+        const top = window.scrollY;
+        const offset = sec.offsetTop - 150;
+        const height = sec.offsetHeight;
+        const id = sec.getAttribute('id');
 
         if (top >= offset && top < offset + height) {
-            navLinks.forEach(links => {
-                links.classList.remove('active');
-                document.querySelector('header nev a[href*=' + id + ']').classList.add('active');
-            });
-        };
+            navLinks.forEach(link => link.classList.remove('active'));
+
+            // Check if the element exists before accessing its classList
+            const activeLink = document.querySelector(`header nav a[href*=${id}]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            } else {
+                console.warn(`No link found for section with ID: ${id}`);
+            }
+        }
     });
-    // sticky navbar
-    let header = document.querySelector('header');
+
+    // Sticky navbar
     header.classList.toggle('sticky', window.scrollY > 100);
 
-    // remove toggle icon and navbar when click navbar link scroll
+    // Remove toggle icon and navbar when clicking navbar link scroll
     menuIcon.classList.remove('bx-x');
     navbar.classList.remove('active');
-};
-// scrall reveal
-ScrollReveal({
+});
+
+// Scroll reveal
+const scrollReveal = ScrollReveal({
     reset: true,
     distance: '80px',
     duration: 2000,
     delay: 200,
-
 });
-ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
-ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form', { origin: 'bottom' });
-ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
-ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
 
-// type js
+scrollReveal.reveal('.home-content, .heading', { origin: 'top' });
+scrollReveal.reveal('.home-img, .services-container, .portfolio-box, .contact form', { origin: 'bottom' });
+scrollReveal.reveal('.home-content h1, .about-img', { origin: 'left' });
+scrollReveal.reveal('.home-content p, .about-content', { origin: 'right' });
+
+// Typed.js
 const typed = new Typed('.multiple-text', {
     strings: ['Frontend Developer', 'Backend Developer', 'Fullstack Developer'],
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 1000,
     loop: true
-})
-
-let aboutBtn = document.getElementById('sklbtn');
-aboutBtn.onclick = () => {
-    aboutBtn.classList.toggle("rajnish kumar")
-}
+});
